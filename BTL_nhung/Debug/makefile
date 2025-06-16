@@ -60,8 +60,8 @@ all: main-build
 main-build: BTL_Nhung.elf secondary-outputs
 
 # Tool invocations
-BTL_Nhung.elf BTL_Nhung.map: $(OBJS) $(USER_OBJS) C:\Users\dotha\Desktop\BTL_Nhung\STM32F103CBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "BTL_Nhung.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\dotha\Desktop\BTL_Nhung\STM32F103CBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BTL_Nhung.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+BTL_Nhung.elf BTL_Nhung.map: $(OBJS) $(USER_OBJS) C:\Users\dotha\Desktop\gas2\BTL_nhung\STM32F103CBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "BTL_Nhung.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\dotha\Desktop\gas2\BTL_nhung\STM32F103CBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BTL_Nhung.map" -Wl,--gc-sections -static -u _printf_float --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
